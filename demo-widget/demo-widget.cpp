@@ -3,10 +3,10 @@
 #include <QApplication>
 #include <QTimer>
 #include <QSurfaceFormat>
-#include <QOpenGLWidget>
+#include <QGLWidget>
 #include <QOpenGLExtraFunctions>
 
-class DemoWindow : public QOpenGLWidget, private QOpenGLExtraFunctions
+class DemoWindow : public QGLWidget, private QOpenGLExtraFunctions
 {
 protected:
     void initializeGL() override

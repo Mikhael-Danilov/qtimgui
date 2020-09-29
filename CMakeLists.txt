@@ -4,7 +4,7 @@ project(qtimgui)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
-find_package(Qt5 COMPONENTS Core Quick Gui Widgets Svg REQUIRED)
+find_package(Qt5 COMPONENTS Core Quick Gui Widgets OpenGL Svg REQUIRED)
 
 # imgui library: imgui is build by default, but you can
 # provide your own version by setting QTIMGUI_BUILD_IMGUI to OFF
@@ -50,7 +50,7 @@ target_link_libraries(
     qt_imgui_widgets
     PUBLIC
     imgui
-    Qt5::Core Qt5::Widgets Qt5::Svg
+    Qt5::Core Qt5::Widgets Qt5::OpenGL Qt5::Svg
     )
 if (ANDROID)
     target_link_libraries(qt_imgui_widgets PUBLIC log dl GLESv2 z)
